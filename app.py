@@ -61,4 +61,6 @@ def generate_meme():
     return render_template('result.html', meme_path=meme_path)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+   # app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # default to 5000 locally
+    app.run(host="0.0.0.0", port=port)
