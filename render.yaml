@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: meme-generator
+    env: python
+    buildCommand: ""
+    startCommand: "python app.py"
+
