@@ -47,10 +47,16 @@ def generate_meme():
     font = ImageFont.truetype("font/Arimo.ttf", size = 100)
 
     # Add top text
-    draw.text((10, 10), top_text, font=font, fill="white")
-
+    #draw.text((10, 10), top_text, font=font, fill="white")
+    bbox = draw.textbbox((0, 0), bottom_text, font=font)
+    text_width = bbox[2] - bbox[0]
+    text_height = bbox[3] - bbox[1]
+    
     # Add bottom text
-    text_width, text_height = draw.textsize(bottom_text, font=font)
+    #text_width, text_height = draw.textsize(bottom_text, font=font)
+    bbox = draw.textbbox((0, 0), bottom_text, font=font)
+    text_width = bbox[2] - bbox[0]
+    text_height = bbox[3] - bbox[1]
     position = (img.width - text_width - 10, img.height - text_height - 10)
     draw.text(position, bottom_text, font=font, fill="white")
 
